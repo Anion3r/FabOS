@@ -14,11 +14,14 @@
 
 
 // 设置 .bss 段作为堆栈
+// stack_top 到 stack_bottom 用来当堆栈
+// stack_top 到结束用来存放全局变量
 .section .bss
 .align 16
 stack_bottom:
     .skip 32768     // 32 * 1024 = 32KB
 stack_top:
+    .skip 32768
 
 
 .section .text
