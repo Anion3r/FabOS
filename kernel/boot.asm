@@ -26,7 +26,8 @@ stack_top:
 .type _start, @function
 _start:
     // 我们需要立即设置堆栈，否则无法使用用C语言写的函数
-    mov esp, stack_top
+    mov esp, offset stack_top
+    mov ebp, esp
     // 然后应该设置 GDTR 和 IDTR等信息，但我们暂时可以先不管
     /* GTDR */
     /* IDTR */
